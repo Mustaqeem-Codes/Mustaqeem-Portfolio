@@ -37,7 +37,14 @@ body {
     position: fixed;
     z-index: 1;
     width: 100%;
+    height: 70px;
+    border-bottom: 1px hidden var(--main-color);
 }
+
+.header:hover{
+    border-bottom: 1px solid var(--main-color);
+}
+
 
 .logo {
     display: flex;
@@ -95,20 +102,11 @@ section {
     min-height: 100vh;
     padding: 10rem 12% 10rem;
 }
-
-/* .home {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 15rem;
-} */
 .home {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 15rem;
-    flex-direction: row-reverse;
-    /* This swaps the positions */
 }
 
 
@@ -144,18 +142,19 @@ span {
 }
 
 .home-img {
-    border-radius: 50%;
+    display: flex;
 }
 
 .home-img img {
     position: relative;
-    top: 3rem;
+    top: 0.5rem;
     width: 32vw;
     border-radius: 50%;
     box-shadow: 0 0 25px var(--main-color);
     cursor: pointer;
     transition: 0.4s ease-in-out;
 }
+
 
 .home-img img:hover {
     box-shadow: 0 0 25px var(--main-color),
@@ -527,16 +526,17 @@ span {
 .services-container {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 2.5rem;
+    column-gap: 1rem; /* Reduce horizontal gap */
+    row-gap: 2.5rem; /* Keep vertical gap unchanged */
     max-width: 1200px;
     margin: auto;
 }
 
+
 .service-box {
     background-color: var(--main-color);
     width: 90%;
-    margin: auto
-    ;
+    margin: auto;
     /* color: white; */
     border-radius: 3rem;
     border: 5px solid transparent;
@@ -918,6 +918,7 @@ span {
     }
     #menu-icon {
         display: block;
+        cursor: pointer;
     }
     .navbar.active {
         display: flex;
@@ -969,6 +970,17 @@ span {
     .home-content {
         align-items: center;
         width: 100%;
+    }
+
+    .btn-group {
+        display: flex;
+        flex-wrap: nowrap; /* Prevents wrapping */
+        overflow-x: auto; /* Enables horizontal scrolling if necessary */
+        gap: 0.5rem; /* Adjust spacing between buttons */
+    }
+
+    .btn-group .btn {
+        white-space: nowrap; /* Prevents text wrapping */
     }
 
     .social-icons {
